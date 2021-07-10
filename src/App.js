@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { Router, Link } from '@reach/router';
+import AllUsers from './components/AllUsers';
+import OneUser from './components/OneUser';
+import CreateUser from './components/CreateUser';
+import UpdateUser from './components/UpdateUser';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <AllUsers path="/"></AllUsers>
+        <OneUser path="/User/:_id"></OneUser>
+        <UpdateUser path="/User/update/:_id"></UpdateUser>
+        <CreateUser path="/User/create"></CreateUser>
+      </Router>
     </div>
   );
 }
